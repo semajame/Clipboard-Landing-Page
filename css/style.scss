@@ -1,0 +1,480 @@
+// # Front-end Style Guide
+
+// ## Layout
+
+// The designs were created to the following widths:
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+
+// ### Primary
+
+// - Strong Cyan: hsl(171, 66%, 44%)
+// - Light Blue: hsl(233, 100%, 69%)
+
+// ### Neutral
+
+// - Dark Grayish Blue: hsl(210, 10%, 33%)
+// - Grayish Blue: hsl(201, 11%, 66%)
+
+// ## Typography
+
+// ### Body Copy
+
+// - Font size: 18px
+
+// ### Fonts
+
+// - Family: [Bai Jamjuree](https://fonts.google.com/specimen/Bai+Jamjuree)
+// - Weights: 400, 600
+
+// ## Icons
+
+// For the social icons, you can use the SVGs provided or a font icon library. Some font icon library suggestions can be found below:
+
+// - [Font Awesome](https://fontawesome.com)
+// - [IcoMoon](https://icomoon.io)
+// - [Ionicons](https://ionicons.com)
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+$strong-cyan: hsl(171, 66%, 44%);
+$light-blue: hsl(233, 100%, 69%);
+$dark-grayish-blue: hsl(210, 10%, 33%);
+$grayish-blue: hsl(201, 11%, 66%);
+
+@mixin flex(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button(){
+    border-radius: 30px;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: inset 0px -6px 0px -3px rgba(0,0,0,0.1);
+}
+
+p{
+    color: $grayish-blue;
+    line-height: 30px;
+}
+
+h1, h2, h3{
+     color: $dark-grayish-blue;
+}
+
+
+body{
+    font-family: 'Bai Jamjuree', sans-serif;
+    height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+main{
+    padding: 6rem 0;
+    background: url(/img/bg-header-desktop.png)no-repeat top;
+    background-size: contain;
+    text-align: center;
+
+    .logo{
+        margin: 0 auto;
+        width: 100px;
+    }
+
+    h1{
+        margin: 2.5rem 0 1rem 0;
+        font-size: 3rem;
+    }
+
+    p{
+        margin: 0 auto;
+        width: 550px;
+    }
+}
+
+.download__container{
+    @include flex();
+    // justify-content: center;
+    margin-top: 3rem;
+    gap: 2rem;
+}
+
+.download__ios{
+    background-color: $strong-cyan;
+    @include button();
+}
+
+.download__mac{
+    @include button();
+    background-color: $light-blue;
+}
+
+.section__one{
+    text-align: center;
+    padding: 2rem 0 4rem 0;
+
+    h2{
+        font-size: 2rem;
+    }
+
+    p{
+        padding: 1rem 0;
+        margin: 0 auto;
+        width: 630px;
+    }
+}
+
+.section__two{
+    @include flex();
+    gap: 4rem;
+    margin-bottom: 8rem;
+
+    .two__left{
+        img{
+            margin-left: -2rem;
+        }
+    }
+
+    .two__right{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 2.8rem;
+
+        &__content{
+            h3{
+                font-size: 1.5rem;   
+            }
+
+            p{
+                padding: 0.5rem 0;
+                width: 350px;
+            }
+        }
+    }
+}
+
+.section__three{
+    text-align: center;
+    margin: 2rem 0;
+    
+    h2{
+        font-size: 2rem;
+    }
+
+    p{
+        margin: 1rem auto;
+        width: 600px;
+    }
+
+    img{
+    
+        margin: 5rem auto;
+    }
+}
+
+.section__four{
+    text-align: center;
+    h2{
+        font-size: 2rem;
+    }
+
+    p{
+        padding: 1rem 0;
+    }
+
+    .section__flexbox{
+        margin: 4rem 5rem;
+        @include flex();
+        align-items: start;
+        gap: 4rem;
+
+        .flexbox{
+            width: 350px;
+
+            img{
+                margin: 0 auto;
+            }
+    
+            h3{
+                margin: 1rem 0 0 0;
+            }
+        }
+    }
+}
+
+.section__five{
+    @include flex();
+    justify-content: space-between !important;
+    margin: 7rem 7rem 9rem 7rem;
+}
+
+.section__six{
+    text-align: center;
+
+    h2{
+        font-size: 2rem;
+    }
+
+    p{
+        margin: 1rem auto;
+       width: 600px;
+    }
+
+    .download__container{
+        margin: 1.8rem !important;
+    }
+}
+
+footer{
+    @include flex();
+    padding: 3rem 9rem;
+    margin-top: 10rem;
+    justify-content: space-between !important;
+    background-color: hsla(204, 12%, 92%, 0.644);
+
+    .footer__left{
+        @include flex();
+        gap: 6rem;
+
+        .footer__logo{
+            width: 80px;
+        }
+    }
+
+    nav{
+        ul{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 10px; 
+
+            li{
+                list-style-type: none;
+
+                a{
+                    padding: 0 1rem;
+                    text-decoration: none;
+                    color: $dark-grayish-blue;
+
+                    &:hover{
+                        transition: 100ms;
+                        color: $strong-cyan;
+                    }
+                }
+            }
+        }
+    }
+
+    .socials__container{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        img{
+            width: 23px;
+        }
+
+        a:hover{
+            transition: 200ms;
+            filter: invert(70%) sepia(22%) saturate(1432%) hue-rotate(120deg) brightness(86%) contrast(79%);
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+
+    main{
+        background: url(/img/bg-header-mobile.png)no-repeat top;
+        background-size: cover;
+        
+        h1{
+            padding: 0 1rem;
+            font-size: 2.8rem;
+        }
+    }
+    
+.section__two{
+    flex-direction: column;
+    text-align: center;
+
+    .two__left{
+        img{
+            margin-left: none;
+            margin: 0 auto;
+            width: 500px;
+        }
+    }
+
+    .two__right{
+        &__content{
+            p{
+                margin: 0 auto;
+                width: 350px;
+            }
+        }
+    }
+}
+
+.section__three{
+    img{
+        width: 500px;
+    }
+}
+
+.section__four{
+    .section__flexbox{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.section__five{
+    flex-direction: column;
+    gap: 5rem;
+    margin: 7rem 0;
+}
+
+footer{
+    flex-direction: column;
+   
+
+    .footer__left{
+        @include flex();
+        flex-direction: column;
+        gap: 2rem;
+
+        .footer__logo{
+            width: 60px;
+        }
+    }
+
+    nav{
+        ul{
+            display: block;
+            text-align: center;
+            padding: 1rem 0;
+
+            li{
+                list-style-type: none;
+                margin: 1rem 0;
+            }
+        }
+    }
+
+    .socials__container{
+        margin-top: 2rem;
+        gap: 2.5rem;
+    }
+}
+}
+
+@media screen and (max-width: 480px) {
+
+    p{
+        font-size: 0.925rem;
+    }
+
+    h2{
+        font-size: 1rem;
+    }
+    
+    main{
+        h1{
+            font-size: 2rem;
+        }
+
+        p{
+            width: 90%;
+            
+        }
+    }
+
+    .download__container{
+        flex-direction: column;
+        gap: 1rem;
+
+        a{
+            width: 90%;
+            
+        }
+    }
+
+    .section__one{
+        p{
+            width: 90%;
+        }
+    }
+    
+      
+.section__two{
+    .two__left{
+        img{
+            width: 300px;
+        }
+    }
+
+    .two__right{
+        width: 100%;
+
+        &__content{
+            p{
+                width: 300px;
+            }
+        }
+    }
+}
+
+.section__three{
+    p{
+        width: 90%;
+    }
+
+    img{
+        width: 400px;
+    }
+}
+
+.section__four{
+    p{
+        margin: 0 auto;
+        width: 300px;
+    }
+    .section__flexbox{
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        margin: 4rem 0;
+    }
+}
+
+
+.section__six{
+    text-align: center;
+
+    h2{
+        font-size: 2rem;
+    }
+
+    p{
+        margin: 1rem auto;
+        width: 85%;
+    }
+
+    .download__container{
+        margin: 1.8rem !important;
+    }
+}
+
+footer{
+    padding: 3rem 1rem;
+}
+}
